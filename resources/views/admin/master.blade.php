@@ -1,139 +1,132 @@
-
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-   
 
-    <link rel="icon" href="img/logo.png" type="image/png">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{url('backend/admin/css/bootstrap.min.css')}}" />
-    <!-- themefy CSS -->
-    <link rel="stylesheet" href="{{url('backend/admin/css/themify-icons.css')}}" />
-    <!-- select2 CSS -->
-    <link rel="stylesheet" href="{{url('backend/admin/css/nice-select.css')}}" />
-    <!-- owl carousel CSS -->
-    <link rel="stylesheet" href="{{url('backend/admin/css/owl.carousel.css')}}" />
-    <!-- gijgo css -->
-    <link rel="stylesheet" href="{{url('backend/admin/css/gijgo.min.css')}}" />
-    <!-- font awesome CSS -->
-    <link rel="stylesheet" href="{{url('backend/admin/css/all.min.css')}}" />
-    <link rel="stylesheet" href="{{url('backend/admin/css/tagsinput.css')}}" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <!-- date picker -->
-     <link rel="stylesheet" href="{{url('backend/admin/css/date-picker.css')}}" />
+    <title>{{config('app.name')}}</title>
 
-     <link rel="stylesheet" href="{{url('backend/admin/css/vectormap.css')}}" />
-     
-     <!-- scrollabe  -->
-     <link rel="stylesheet" href="{{url('backend/admin/css/scrollable.css')}}" />
-    <!-- datatable CSS -->
-    <link rel="stylesheet" href="{{url('backend/admin/css/jquery.dataTables.min.css')}}" />
-    <link rel="stylesheet" href="{{url('backend/admin/css/responsive.dataTables.min.css')}}" />
-    <link rel="stylesheet" href="{{url('backend/admin/css/buttons.dataTables.min.css')}}" />
-    <!-- text editor css -->
-    <link rel="stylesheet" href="{{url('backend/admin/css/summernote.css')}}" />
-    <!-- morris css -->
-    <link rel="stylesheet" href="{{url('backend/admin/css/morris.css')}}">
-    <!-- metarial icon css -->
-    <link rel="stylesheet" href="{{url('backend/admin/css/material.css')}}" />
+    <!-- Custom fonts for this template-->
+    <link href="{{url('/backend/admin/css/all.min.css')}}" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
-    <!-- menu css  -->
-    <link rel="stylesheet" href="{{url('backend/admin/css/metisMenu.css')}}">
-    <!-- style CSS -->
-    <link rel="stylesheet" href="{{url('backend/admin/css/style.css')}}" />
-    <link rel="stylesheet" href="{{url('backend/admin/css/default.css')}}" id="colorSkinCSS">
+    <!-- Custom styles for this template-->
+    <link href="{{url('/backend/admin/css/sb-admin-2.min.css')}}" rel="stylesheet">
+    <link href="{{ url ('/backend/admincss/jquery.dataTables.min.css') }}" rel="stylesheet">
+
 </head>
-<body class="crm_body_bg">
-    
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
 
 
-<!-- main content part here -->
- 
- @include('admin.fixed.sidebar')
+        @include('admin.fixed.sidebar')
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
 
 
+                @include('admin.fixed.header')
 
-                
-                
-                        
-                                
-                
- @include('admin.fixed.footer')
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                @if(session()->has('msg'))
+                  <p class="alert alert-success">
+                  {{session()->get('msg')}}
+                  </p>
+                @endif
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                    </div>
+                    <div>
+                    </div>
 
- 
-<script src="js/jquery.min.js"></script>
-<!-- popper js -->
-<script src="backend/admin/js/popper.min.js"></script>
-<!-- bootstarp js -->
-<script src="{{url('backend/admin/js/bootstrap.min.js')}}"></script>
-<!-- sidebar menu  -->
-<script src="backend/admin/js/metisMenu.js"></script>
-<!-- waypoints js -->
-<script src="backend/admin/js/jquery.js"></script>
-<!-- waypoints js -->
-<script src="backend/admin/js/Chart.min.js"></script>
-<!-- counterup js -->
-<script src="backend/admin/js/counterup.min.js"></script>
+                    <!-- Content Row -->
+                    <div class="row">
+                        @yield('content')
 
-<!-- nice select -->
-<script src="backend/admin/js/nice-select.min.js"></script>
-<!-- owl carousel -->
-<script src="backend/admin/js/owl.carousel.min.js"></script>
-
-<!-- responsive table -->
-<!-- <script src="vendors/datatable/js/jquery.dataTables.min.js"></script>
-<script src="vendors/datatable/js/dataTables.responsive.min.js"></script>
-<script src="vendors/datatable/js/dataTables.buttons.min.js"></script>
-<script src="vendors/datatable/js/buttons.flash.min.js"></script>
-<script src="vendors/datatable/js/jszip.min.js"></script>
-<script src="vendors/datatable/js/pdfmake.min.js"></script>
-<script src="vendors/datatable/js/vfs_fonts.js"></script>
-<script src="vendors/datatable/js/buttons.html5.min.js"></script>
-<script src="vendors/datatable/js/buttons.print.min.js"></script> -->
-
-<!-- datepicker  -->
-<!-- <script src="vendors/datepicker/datepicker.js"></script>
-<script src="vendors/datepicker/datepicker.en.js"></script>
-<script src="vendors/datepicker/datepicker.custom.js"></script>
-
-<script src="js/chart.min.js"></script>
-<script src="vendors/chartjs/roundedBar.min.js"></script> -->
-
-<!-- progressbar js -->
-<script src="backend/admin/js/barfiller.js"></script>
-<!-- tag input -->
-<script src="backend/admin/js/tagsinput.js"></script>
-<!-- text editor js -->
-<script src="backend/admin/js/summernote.js"></script>
-<script src="backend/admin/js/amcharts.js"></script>
-
-<!-- scrollabe  -->
-<!-- <script src="vendors/scroll/perfect-scrollbar.min.js"></script>
-<script src="vendors/scroll/scrollable-custom.js"></script> -->
-
-<!-- vector map  -->
-<!-- <script src="vendors/vectormap-home/vectormap-2.0.2.min.js"></script>
-<script src="vendors/vectormap-home/vectormap-world-mill-en.js"></script> -->
-
-<!-- apex chrat  -->
-<!-- <script src="vendors/apex_chart/apex-chart2.js"></script>
-<script src="vendors/apex_chart/apex_dashboard.js"></script>
-
-<script src="vendors/echart/echarts.min.js"></script>
+                    </div>
 
 
-<script src="vendors/chart_am/core.js"></script>
-<script src="vendors/chart_am/charts.js"></script>
-<script src="vendors/chart_am/animated.js"></script>
-<script src="vendors/chart_am/kelly.js"></script>
-<script src="vendors/chart_am/chart-custom.js"></script> -->
+                </div>
+                <!-- /.container-fluid -->
 
-<!-- custom js -->
-<script src="backend/admin/js/dashboard_init.js"></script>
-<script src="backend/admin/js/custom.js"></script>
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="{{ url ('/backend/admin/js/jquery.min.js') }}"></script>
+    <script src="{{ url ('/backend/admin/js/bootstrap.bundle.min.js') }}"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="{{ url ('/backend/admin/js/jquery.easing.min.js') }}"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="{{ url ('/backend/admin/js/sb-admin-2.min.js') }}"></script>
+
+    <!-- Page level plugins -->
+    <script src="{{ url ('/backend/admin/js/Chart.min.js') }}"></script>
+    <script src="{{ url ('/backend/admin/js/jquery.dataTables.min.js') }}"></script>
+
+    @stack('more_script')
+    <!-- Page level custom scripts -->
+    <script src="{{ url ('/backend/admin/js/chart-area-demo.js') }}"></script>
+    <script src="{{ url ('/backend/admin/js/chart-pie-demo.js') }}"></script>
+
 </body>
+
 </html>
